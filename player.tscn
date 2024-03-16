@@ -8,10 +8,10 @@ size = Vector2(160, 16)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ksqto")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 z_index = 1
 shape = SubResource("RectangleShape2D_2pagj")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Quad" type="Polygon2D" parent="."]
 position = Vector2(-66, -4)
 polygon = PackedVector2Array(146, -4, 146, 12, -14, 12, -14, -4)

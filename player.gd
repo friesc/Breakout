@@ -1,17 +1,21 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+@onready var collisionShape = $CollisionShape
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+const SPEED: float = 450.0
 
 func _physics_process(_delta):
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	var direction: float = Input.get_axis("ui_left", "ui_right")
+	
+	velocity.x = move_toward(velocity.x, 0, direction * SPEED)
 
 	move_and_slide()
+
+	var viewport_size = get_viewport_rect().size
+
+	var collision_half_width = collisionShape.shape.get_rect().size.x / 2.0
+
+	if global_position.x - collision_half_width < 0:
+		global_position.x = collision_half_width
+	elif global_position.x + collision_half_width > viewport_size.x:
+		global_position.x = viewport_size.x - collision_half_width
