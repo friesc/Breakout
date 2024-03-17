@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6648o77bnckr"]
+
+[ext_resource type="Script" path="res://block.gd" id="1_2cum0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5m83"]
+size = Vector2(160, 16)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_2cum0")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+visible = false
+z_index = 1
+shape = SubResource("RectangleShape2D_w5m83")
+
+[node name="Quad" type="Polygon2D" parent="."]
+position = Vector2(-66, -4)
+color = Color(1, 0.372549, 0.341176, 1)
+polygon = PackedVector2Array(146, -4, 146, 12, -14, 12, -14, -4)

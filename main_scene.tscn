@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://hgvahahrmuw7"]
+[gd_scene load_steps=3 format=3 uid="uid://hgvahahrmuw7"]
 
-[ext_resource type="PackedScene" uid="uid://ctp8p0kbiq8g2" path="res://player.tscn" id="1_k8cu3"]
+[ext_resource type="PackedScene" uid="uid://ctp8p0kbiq8g2" path="res://Paddle/paddle.tscn" id="1_k8cu3"]
+[ext_resource type="Script" path="res://main_scene.gd" id="1_qgq4b"]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_qgq4b")
+colors = PackedColorArray(0.858824, 0.827451, 0.678431, 1, 0.878431, 0.376471, 0.494118, 1, 0.827451, 0.376471, 0.376471, 1, 0.760784, 0.443137, 0.309804, 1, 0.964706, 0.772549, 0.686275, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_k8cu3")]
+[node name="Paddle" parent="." instance=ExtResource("1_k8cu3")]
 position = Vector2(640, 600)

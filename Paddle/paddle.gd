@@ -5,9 +5,9 @@ extends CharacterBody2D
 const SPEED: float = 450.0
 
 func _physics_process(_delta):
-	var direction: float = Input.get_axis("ui_left", "ui_right")
-	
-	velocity.x = move_toward(velocity.x, 0, direction * SPEED)
+	var direction = Input.get_axis("PaddleLeft", "PaddleRight")
+
+	velocity.x = direction * SPEED
 
 	move_and_slide()
 
