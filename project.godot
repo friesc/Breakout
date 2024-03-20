@@ -13,11 +13,17 @@ config_version=5
 config/name="Breakout"
 run/main_scene="res://main_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [debug]
 
 gdscript/warnings/integer_division=0
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 
@@ -33,6 +39,10 @@ PaddleRight={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
 ]
 }
+
+[physics]
+
+2d/default_gravity=0.0
 
 [rendering]
 

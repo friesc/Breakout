@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b46s1ncdpkelv"]
+
+[ext_resource type="Script" path="res://ball.gd" id="1_ffqj8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vscka"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1i44f"]
+radius = 20.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vscka")
+gravity_scale = 0.0
+script = ExtResource("1_ffqj8")
+radius = 20.0
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1i44f")
